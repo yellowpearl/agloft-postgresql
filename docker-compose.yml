@@ -10,7 +10,7 @@ services:
       - ./pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
       - ./postgresql.conf:/var/lib/postgresql/data/postgresql.conf
     ports:
-      - "5432:5432"
+      - "6432:5432"
     networks:
       - proxy
 
