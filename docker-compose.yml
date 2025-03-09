@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: stats-postgres
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - stats_data:/var/lib/postgresql/data
+      - ./pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
+      - ./postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+    ports:
+      - "5432:5432"
+    networks:
+      - proxy
+
+volumes:
+  stats_data:
+
+networks:
+  proxy:
+    external: true
