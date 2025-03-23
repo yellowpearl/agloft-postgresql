@@ -8,6 +8,7 @@ services:
     volumes:
       - /etc/letsencrypt/live/postgres.api-agloft.ru/fullchain.pem:/var/lib/postgresql/fullchain.pem:ro
       - /etc/letsencrypt/live/postgres.api-agloft.ru/privkey.pem:/var/lib/postgresql/privkey.pem:ro
+      - /etc/letsencrypt/live/postgres.api-agloft.ru/chain.pem:/var/lib/postgresql/chain.pem:ro
       - stats_data:/var/lib/postgresql/data
       - ./pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
       - ./postgresql.conf:/var/lib/postgresql/data/postgresql.conf
